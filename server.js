@@ -1,6 +1,6 @@
 require('dotenv').config();
 const express = require('express');
-const nodemailer = require('nodemailer');
+// const nodemailer = require('nodemailer');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 const path = require('path');
@@ -47,24 +47,91 @@ app.post('/api/tributes', async (req, res) => {
   const message = clean(req.body.message, 5000);
   if (name.length < 2 || message.length < 10) return res.status(400).json({ message: 'Please provide your name and a tribute of at least 10 characters.' });
   if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return res.status(400).json({ message: 'Please enter a valid email address.' });
-  if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD || !process.env.TRIBUTES_TO) {
-    console.error('Email configuration missing. Set GMAIL_USER, GMAIL_APP_PASSWORD, and TRIBUTES_TO in .env');
-    return res.status(503).json({ message: 'Tribute email is not configured yet. Please contact the website administrator.' });
+  if (
+      !process.env.EMAIL_SERVICE_URL ||
+      !process.env.EMAIL_SERVICE_API_KEY ||
+      !process.env.TRIBUTES_TO
+  ) {
+    console.error('Remote email service configuration is missing.');
+    return res.status(503).json({
+      message: 'Tribute email is not configured yet. Please contact the website administrator.'
+    });
   }
+  // if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD || !process.env.TRIBUTES_TO) {
+  //   console.error('Email configuration missing. Set GMAIL_USER, GMAIL_APP_PASSWORD, and TRIBUTES_TO in .env');
+  //   return res.status(503).json({ message: 'Tribute email is not configured yet. Please contact the website administrator.' });
+  // }
   try {
-    const transporter = nodemailer.createTransport({ service: 'gmail', auth: { user: process.env.GMAIL_USER, pass: process.env.GMAIL_APP_PASSWORD } });
+    // const transporter = nodemailer.createTransport({ service: 'gmail', auth: { user: process.env.GMAIL_USER, pass: process.env.GMAIL_APP_PASSWORD } });
     const now = new Date();
     const tribute = { id: crypto.randomUUID(), token: crypto.randomBytes(32).toString('hex'), name, relationship, email, title, message, submittedAt: now.toISOString(), status: 'pending', expiresAt: new Date(now.getTime() + 14 * 24 * 60 * 60 * 1000).toISOString() };
     const tributes = readTributes();
     tributes.push(tribute);
     saveTributes(tributes);
     const reviewUrl = `${baseUrl(req)}/review/${tribute.token}`;
-    await transporter.sendMail({
-      from: `Elder Nma Onwuka Memorial <${process.env.GMAIL_USER}>`, to: process.env.TRIBUTES_TO,
-      replyTo: email || undefined, subject: `[Action required: review tribute] ${title}`,
-      text: `A tribute has been submitted for Elder Nma Onwuka and is NOT public unless you approve it.\n\nName: ${name}\nRelationship: ${relationship}\nEmail: ${email || 'Not provided'}\nTitle: ${title}\nSubmitted: ${now.toLocaleString('en-GB', { timeZone: 'UTC' })} UTC\n\nTRIBUTE\n${message}\n\nReview and choose Approve or Reject using this private link (expires in 14 days):\n${reviewUrl}\n\nThe tribute remains private until approved.`,
-      html: `<div style="font-family:Arial,sans-serif;max-width:680px;margin:auto;color:#17251f"><div style="background:#173b30;color:#fff;padding:24px"><p style="color:#c8a66a;text-transform:uppercase;letter-spacing:2px;font-size:12px">Private review required</p><h1 style="margin:0">Elder Nma Onwuka</h1></div><div style="padding:24px;border:1px solid #e8e2d7"><p><b>This tribute is not public.</b> Review it and choose whether to publish it.</p><h2>${escapeHtml(title)}</h2><p><b>From:</b> ${escapeHtml(name)}</p><p><b>Relationship:</b> ${escapeHtml(relationship)}</p><p><b>Email:</b> ${escapeHtml(email || 'Not provided')}</p><hr style="border:0;border-top:1px solid #e8e2d7"><div style="white-space:pre-wrap;line-height:1.7">${escapeHtml(message)}</div><p style="margin-top:28px"><a href="${escapeHtml(reviewUrl)}" style="background:#c8a66a;color:#17251f;padding:14px 20px;text-decoration:none;font-weight:bold">Review tribute</a></p><p style="font-size:12px;color:#69756e">This private review link expires in 14 days. The page will let you approve or reject the tribute.</p></div></div>`
+    // await transporter.sendMail({
+    //   from: `Elder Nma Onwuka Memorial <${process.env.GMAIL_USER}>`, to: process.env.TRIBUTES_TO,
+    //   replyTo: email || undefined, subject: `[Action required: review tribute] ${title}`,
+    //   text: `A tribute has been submitted for Elder Nma Onwuka and is NOT public unless you approve it.\n\nName: ${name}\nRelationship: ${relationship}\nEmail: ${email || 'Not provided'}\nTitle: ${title}\nSubmitted: ${now.toLocaleString('en-GB', { timeZone: 'UTC' })} UTC\n\nTRIBUTE\n${message}\n\nReview and choose Approve or Reject using this private link (expires in 14 days):\n${reviewUrl}\n\nThe tribute remains private until approved.`,
+    //   html: `<div style="font-family:Arial,sans-serif;max-width:680px;margin:auto;color:#17251f"><div style="background:#173b30;color:#fff;padding:24px"><p style="color:#c8a66a;text-transform:uppercase;letter-spacing:2px;font-size:12px">Private review required</p><h1 style="margin:0">Elder Nma Onwuka</h1></div><div style="padding:24px;border:1px solid #e8e2d7"><p><b>This tribute is not public.</b> Review it and choose whether to publish it.</p><h2>${escapeHtml(title)}</h2><p><b>From:</b> ${escapeHtml(name)}</p><p><b>Relationship:</b> ${escapeHtml(relationship)}</p><p><b>Email:</b> ${escapeHtml(email || 'Not provided')}</p><hr style="border:0;border-top:1px solid #e8e2d7"><div style="white-space:pre-wrap;line-height:1.7">${escapeHtml(message)}</div><p style="margin-top:28px"><a href="${escapeHtml(reviewUrl)}" style="background:#c8a66a;color:#17251f;padding:14px 20px;text-decoration:none;font-weight:bold">Review tribute</a></p><p style="font-size:12px;color:#69756e">This private review link expires in 14 days. The page will let you approve or reject the tribute.</p></div></div>`
+    // });
+    const emailHtml = `
+  <div style="font-family:Arial,sans-serif;max-width:680px;margin:auto;color:#17251f">
+    <div style="background:#173b30;color:#fff;padding:24px">
+      <p style="color:#c8a66a;text-transform:uppercase;letter-spacing:2px;font-size:12px">
+        Private review required
+      </p>
+      <h1 style="margin:0">Elder Nma Onwuka</h1>
+    </div>
+
+    <div style="padding:24px;border:1px solid #e8e2d7">
+      <p><b>This tribute is not public.</b> Review it and choose whether to publish it.</p>
+      <h2>${escapeHtml(title)}</h2>
+      <p><b>From:</b> ${escapeHtml(name)}</p>
+      <p><b>Relationship:</b> ${escapeHtml(relationship)}</p>
+      <p><b>Email:</b> ${escapeHtml(email || 'Not provided')}</p>
+      <hr style="border:0;border-top:1px solid #e8e2d7">
+      <div style="white-space:pre-wrap;line-height:1.7">${escapeHtml(message)}</div>
+      <p style="margin-top:28px">
+        <a href="${escapeHtml(reviewUrl)}"
+           style="background:#c8a66a;color:#17251f;padding:14px 20px;text-decoration:none;font-weight:bold">
+          Review tribute
+        </a>
+      </p>
+      <p style="font-size:12px;color:#69756e">
+        This private review link expires in 14 days.
+      </p>
+    </div>
+  </div>
+`;
+
+    const emailResponse = await fetch(process.env.EMAIL_SERVICE_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': process.env.EMAIL_SERVICE_API_KEY
+      },
+      body: JSON.stringify({
+        recipient: process.env.TRIBUTES_TO,
+        subject: `[Action required: review tribute] ${title}`,
+        senderName: 'Elder Nma Onwuka Memorial — Tribute Notification',
+        messageBody: emailHtml
+      }),
+      signal: AbortSignal.timeout(20000)
     });
+
+    if (!emailResponse.ok) {
+      const errorBody = await emailResponse.text();
+
+      console.error(
+          `Remote email API returned ${emailResponse.status}:`,
+          errorBody.slice(0, 1000)
+      );
+
+      return res.status(502).json({
+        message: 'We could not send your tribute for review. Please try again later.'
+      });
+    }
     return res.status(200).json({ message: 'Tribute submitted for family review.' });
   } catch (err) {
     console.error('Tribute processing failed:', err.message);
