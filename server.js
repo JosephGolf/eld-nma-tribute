@@ -8,6 +8,8 @@ const fs = require('fs');
 const crypto = require('crypto');
 
 const app = express();
+// Render sits behind a reverse proxy.
+app.set('trust proxy', 1);
 const PORT = Number(process.env.PORT || 3000);
 const DATA_DIR = path.join(__dirname, 'data');
 const TRIBUTES_FILE = path.join(DATA_DIR, 'tributes.json');
