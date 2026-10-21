@@ -55,6 +55,35 @@
         object-fit: contain;
     }
 }
+
+
+.video-card {
+    display: block;
+    min-width: 0;
+    min-height: 250px;
+    background: #17251f;
+    overflow: hidden;
+}
+
+.video-card video {
+    display: block;
+    width: 100%;
+    min-height: 250px;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+}
+
+@media (max-width: 760px) {
+    .gallery-card:last-child {
+        display: block;
+    }
+
+    .video-card {
+        grid-column: 1 / -1;
+        width: 100%;
+        margin-top: 0;
+    }
+}
 </style>
 </head>
 <body>
@@ -74,7 +103,44 @@
     </a>
 </div><div class="portrait-frame"><div class="portrait" id="heroPortrait"><div class="placeholder"><strong>Your loved one's portrait</strong><small>Add his photo to<br>public/assets/photos/elder-nma-onwuka.jpg</small></div></div><div class="frame-caption">Loved • Honoured • Remembered</div></div></div></section>
 <section class="section" id="his-life"><div class="wrap story-grid"><div><div class="eyebrow">His story, our memories</div><div class="quote-mark">“</div><p class="story-quote">A life is measured not only by the years we live, but by the love, values and memories we leave behind.</p></div><div class="story-copy"><h2>A life worth celebrating.</h2><p>At 78, Elder Nma Onwuka leaves behind a story carried forward by family, friends and all whose lives he touched. This space is dedicated to remembering him with gratitude, sharing treasured moments, and celebrating the values that made his life meaningful.</p><p>Every photograph holds a memory. Every story brings us closer. Every tribute is a reminder that the people we love remain part of us.</p><p>Family and friends are invited to share a message, a special memory, or words of comfort. Together, let us honour his journey and keep his legacy alive for generations to come.</p><div class="stat-row"><div class="stat"><strong>78</strong><span>Years of life</span></div><div class="stat"><strong>∞</strong><span>Memories cherished</span></div><div class="stat"><strong>♥</strong><span>Love remembered</span></div></div></div></div></section>
-<section class="section gallery" id="gallery"><div class="wrap"><div class="section-head"><div class="eyebrow">Moments we keep</div><h2>A life in pictures & film</h2><p>From quiet moments to joyful gatherings, these memories help tell the story of a life we will always treasure.</p></div><div class="gallery-grid"><div class="gallery-card" id="galleryPhoto1"><div class="media-placeholder"><div class="symbol">✧</div><strong>Portraits & milestones</strong><span>Add photos to public/assets/photos/</span></div></div><div class="gallery-card" id="galleryPhoto2"><div class="media-placeholder"><div class="symbol">♡</div><strong>Family & friends</strong><span>Your favourite shared moments</span></div></div><div class="gallery-card" id="galleryVideo"><div class="media-placeholder"><div class="symbol">▷</div><strong>Memories in motion</strong><span>Add a video to public/assets/videos/</span></div></div></div><p class="gallery-note">Life moments.</p></div></section>
+<section class="section gallery" id="gallery"><div class="wrap"><div class="section-head"><div class="eyebrow">Moments we keep</div><h2>A life in pictures & film</h2><p>From quiet moments to joyful gatherings, these memories help tell the story of a life we will always treasure.</p></div>
+<!--    <div class="gallery-grid"><div class="gallery-card" id="galleryPhoto1"><div class="media-placeholder"><div class="symbol">✧</div><strong>Portraits & milestones</strong><span>Add photos to public/assets/photos/</span></div></div><div class="gallery-card" id="galleryPhoto2"><div class="media-placeholder"><div class="symbol">♡</div><strong>Family & friends</strong><span>Your favourite shared moments</span></div></div><div class="gallery-card" id="galleryVideo"><div class="media-placeholder"><div class="symbol">▷</div><strong>Memories in motion</strong><span>Add a video to public/assets/videos/</span></div></div></div>-->
+
+    <div class="gallery-grid">
+        <div class="gallery-card" id="galleryPhoto1">
+            <div class="media-placeholder">
+                <div class="symbol">✧</div>
+                <strong>Portraits & milestones</strong>
+                <span>Family photographs</span>
+            </div>
+        </div>
+
+        <div class="gallery-card" id="galleryPhoto2">
+            <div class="media-placeholder">
+                <div class="symbol">♡</div>
+                <strong>Family & friends</strong>
+                <span>Shared moments</span>
+            </div>
+        </div>
+
+        <div class="gallery-card video-card" id="galleryVideo1">
+            <div class="media-placeholder">
+                <div class="symbol">▷</div>
+                <strong>Memorial Video 1</strong>
+                <span>Watch a cherished memory</span>
+            </div>
+        </div>
+
+        <div class="gallery-card video-card" id="galleryVideo2">
+            <div class="media-placeholder">
+                <div class="symbol">▷</div>
+                <strong>Memorial Video 2</strong>
+                <span>Watch another cherished memory</span>
+            </div>
+        </div>
+    </div>
+
+    <p class="gallery-note">Life moments.</p></div></section>
 <section class="section" id="tributes"><div class="wrap tributes-layout"><div class="tribute-intro"><div class="eyebrow">Share a memory</div><h2>Your words will keep his memory alive.</h2><p>If Elder Nma Onwuka touched your life, we invite you to share a tribute. Your message will be sent privately to the family for review. It will appear on this website only if the family approves it through the secure link in the email notification.</p><div class="tribute-count">Every memory matters. Every voice is welcome.</div></div><div class="form-card"><h3>Write a tribute</h3><p>Share a message in honour of Elder Nma Onwuka.</p><form id="tributeForm"><div class="form-row"><div class="field"><label for="name">Your full name *</label><input id="name" name="name" autocomplete="name" maxlength="100" required placeholder="Enter your name"></div><div class="field"><label for="relationship">Your relationship</label><select id="relationship" name="relationship"><option value="Family member">Family member</option><option value="Friend">Friend</option><option value="Colleague">Colleague</option><option value="Church / community">Church / community</option><option value="Other">Other</option></select></div></div><div class="field"><label for="email">Email address (optional)</label><input id="email" name="email" type="email" maxlength="254" placeholder="you@example.com"><small>Only included so the family can identify your message if needed.</small></div><div class="field"><label for="title">Tribute title (optional)</label><input id="title" name="title" maxlength="120" placeholder="e.g. A father figure and mentor"></div><div class="field"><label for="message">Your tribute *</label><textarea id="message" name="message" minlength="10" maxlength="5000" required placeholder="Share a memory, a lesson he taught you, or a few words from the heart..."></textarea><small>10–5,000 characters.</small></div><div class="consent"><input id="consent" type="checkbox" required><label for="consent">I understand my tribute will be sent privately to the family for review and may be published on this memorial website if approved.</label></div><div class="hidden" aria-hidden="true"><label for="website">Leave this field empty</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div><button class="btn submit" id="submitBtn" type="submit">Send your tribute&nbsp; ↗</button><div id="formStatus" class="form-status" role="status" aria-live="polite"></div><div class="privacy">Tributes remain private unless the family approves them through the secure review link sent by email.</div></form></div></div></section>
 <section class="section published-tributes" id="published-tributes"><div class="wrap"><div class="section-head"><div class="eyebrow">Words from family & friends</div><h2>Tributes & Memories</h2><p>Messages shared in love and published with the family’s approval.</p></div>
 
@@ -109,34 +175,77 @@
 (function(){const photoPaths=['/assets/photos/elder-nma-onwuka.jpg','/assets/photos/family-memory.jpg'];function tryImage(path,container,alt){const img=new Image();img.alt=alt;img.onload=()=>{container.innerHTML='';container.appendChild(img)};img.onerror=()=>{};img.src=path;}const hero=document.getElementById('heroPortrait');tryImage(photoPaths[0],hero,'Portrait of Elder Nma Onwuka');tryImage(photoPaths[1],document.getElementById('galleryPhoto1'),'A memory of Elder Nma Onwuka');tryImage('/assets/photos/family-memory-2.jpg',document.getElementById('galleryPhoto2'),'Family memory');
     // const v=document.createElement('video');v.controls=true;v.preload='metadata';v.src='/assets/videos/memorial.mp4';v.onloadedmetadata=()=>{const c=document.getElementById('galleryVideo');c.innerHTML='';c.appendChild(v)};v.onerror=()=>{};
 
-    const v = document.createElement('video');
-    v.controls = true;
-    v.preload = 'metadata';
-    v.playsInline = true;
-    v.setAttribute('playsinline', '');
-    v.setAttribute('webkit-playsinline', '');
-    v.setAttribute('aria-label', 'Memorial video of Elder Nma Onwuka');
 
-    v.style.width = '100%';
-    v.style.height = '100%';
-    v.style.minHeight = '250px';
-    v.style.objectFit = 'contain';
-    v.style.display = 'block';
-    v.style.background = '#17251f';
+    const videos = [
+        {
+            container: 'galleryVideo1',
+            src: '/assets/videos/memorial.mp4',
+            title: 'Memorial video of Elder Nma Onwuka'
+        },
+        {
+            container: 'galleryVideo2',
+            src: '/assets/videos/memorial-2.mp4',
+            title: 'Additional memorial video of Elder Nma Onwuka'
+        }
+    ];
 
-    const videoContainer = document.getElementById('galleryVideo');
+    videos.forEach(({ container, src, title }) => {
+        const videoContainer = document.getElementById(container);
+        if (!videoContainer) return;
 
-// Display the video element immediately rather than waiting for metadata.
-    videoContainer.replaceChildren(v);
+        const video = document.createElement('video');
 
-    v.src = '/assets/videos/memorial.mp4';
-    v.load();
+        video.controls = true;
+        video.preload = 'metadata';
+        video.playsInline = true;
+        video.setAttribute('playsinline', '');
+        video.setAttribute('webkit-playsinline', '');
+        video.setAttribute('aria-label', title);
 
-    v.addEventListener('error', () => {
-        console.error(
-            'Memorial video failed to load. Check the video path, format and server response.'
-        );
+        video.style.width = '100%';
+        video.style.height = '100%';
+        video.style.minHeight = '250px';
+        video.style.objectFit = 'contain';
+        video.style.display = 'block';
+        video.style.background = '#17251f';
+
+        video.addEventListener('error', () => {
+            console.error(`Memorial video failed to load: ${src}`);
+        });
+
+        videoContainer.replaceChildren(video);
+        video.src = src;
+        video.load();
     });
+
+//     const v = document.createElement('video');
+//     v.controls = true;
+//     v.preload = 'metadata';
+//     v.playsInline = true;
+//     v.setAttribute('playsinline', '');
+//     v.setAttribute('webkit-playsinline', '');
+//     v.setAttribute('aria-label', 'Memorial video of Elder Nma Onwuka');
+//
+//     v.style.width = '100%';
+//     v.style.height = '100%';
+//     v.style.minHeight = '250px';
+//     v.style.objectFit = 'contain';
+//     v.style.display = 'block';
+//     v.style.background = '#17251f';
+//
+//     const videoContainer = document.getElementById('galleryVideo');
+//
+// // Display the video element immediately rather than waiting for metadata.
+//     videoContainer.replaceChildren(v);
+//
+//     v.src = '/assets/videos/memorial.mp4';
+//     v.load();
+//
+//     v.addEventListener('error', () => {
+//         console.error(
+//             'Memorial video failed to load. Check the video path, format and server response.'
+//         );
+//     });
 })();
 const form=document.getElementById('tributeForm'),statusBox=document.getElementById('formStatus'),submitBtn=document.getElementById('submitBtn');form.addEventListener('submit',async e=>{e.preventDefault();statusBox.className='form-status';statusBox.textContent='';if(!form.reportValidity())return;submitBtn.disabled=true;submitBtn.textContent='Sending tribute…';try{const data=Object.fromEntries(new FormData(form).entries());const res=await fetch('/api/tributes',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});const result=await res.json().catch(()=>({}));if(!res.ok)throw new Error(result.message||'Your tribute could not be sent. Please try again.');statusBox.className='form-status show ok';statusBox.textContent='Thank you. Your tribute has been sent privately to the family for review. It will appear here only if approved.';form.reset();}catch(err){statusBox.className='form-status show error';statusBox.textContent=err.message||'Unable to send right now. Please check your connection and try again.';}finally{submitBtn.disabled=false;submitBtn.innerHTML='Send your tribute&nbsp; ↗';}});
 // async function loadPublishedTributes(){const target=document.getElementById('publishedTributes');try{const response=await fetch('/api/tributes');if(!response.ok)throw new Error('Could not load tributes');const data=await response.json();if(!data.tributes.length){target.innerHTML='<div class="empty-tributes">No tributes have been published yet. You can be the first to share a memory.</div>';return;}target.innerHTML='';for(const tribute of data.tributes){const card=document.createElement('article');card.className='published-card';const heading=document.createElement('h3');heading.textContent=tribute.title||'A tribute to Elder Nma Onwuka';const meta=document.createElement('div');meta.className='published-meta';const date=tribute.submittedAt?new Date(tribute.submittedAt).toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'}):'';meta.textContent=`${tribute.name} · ${tribute.relationship||'Family and friends'}${date?' · '+date:''}`;const message=document.createElement('p');message.textContent=tribute.message;card.append(heading,meta,message);target.appendChild(card);}}catch{target.innerHTML='<div class="empty-tributes">Tributes could not be loaded right now.</div>';}}
