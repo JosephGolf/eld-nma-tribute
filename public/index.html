@@ -196,11 +196,63 @@
 </main><footer class="footer"><div class="wrap"><span>In loving memory of Elder Nma Onwuka • 78 years</span><span>Made with care for family and friends</span></div></footer>
 <script>
 // Optional local assets: the site automatically displays these files when present.
-(function(){const photoPaths=['/assets/photos/elder-nma-onwuka.jpg','/assets/photos/family-memory.jpg'];function tryImage(path,container,alt){const img=new Image();img.alt=alt;img.onload=()=>{container.innerHTML='';container.appendChild(img)};img.onerror=()=>{};img.src=path;}const hero=document.getElementById('heroPortrait');tryImage(photoPaths[0],hero,'Portrait of Elder Nma Onwuka');tryImage(photoPaths[1],document.getElementById('galleryPhoto1'),'A memory of Elder Nma Onwuka');tryImage('/assets/photos/family-memory-2.jpg',document.getElementById('galleryPhoto2'),'Family memory');tryImage(
-    photoPaths[3],
-    document.getElementById('galleryPhoto3'),
-    'Another family memory of Elder Nma Onwuka'
-);
+// (function(){const photoPaths=['/assets/photos/elder-nma-onwuka.jpg','/assets/photos/family-memory.jpg'];function tryImage(path,container,alt){const img=new Image();img.alt=alt;img.onload=()=>{container.innerHTML='';container.appendChild(img)};img.onerror=()=>{};img.src=path;}const hero=document.getElementById('heroPortrait');tryImage(photoPaths[0],hero,'Portrait of Elder Nma Onwuka');tryImage(photoPaths[1],document.getElementById('galleryPhoto1'),'A memory of Elder Nma Onwuka');tryImage('/assets/photos/family-memory-2.jpg',document.getElementById('galleryPhoto2'),'Family memory');tryImage(
+//     photoPaths[3],
+//     document.getElementById('galleryPhoto3'),
+//     'Another family memory of Elder Nma Onwuka'
+// );
+(function() {
+    const photoPaths = [
+        '/assets/photos/elder-nma-onwuka.jpg',
+        '/assets/photos/family-memory.jpg',
+        '/assets/photos/family-memory-2.jpg',
+        '/assets/photos/family-memory-3.jpg'
+    ];
+
+    function tryImage(path, container, alt) {
+        if (!container) return;
+
+        const img = new Image();
+        img.alt = alt;
+
+        img.onload = () => {
+            container.innerHTML = '';
+            container.appendChild(img);
+        };
+
+        img.onerror = () => {
+            console.error('Image failed to load:', path);
+        };
+
+        img.src = path;
+    }
+
+    const hero = document.getElementById('heroPortrait');
+
+    tryImage(
+        photoPaths[0],
+        hero,
+        'Portrait of Elder Nma Onwuka'
+    );
+
+    tryImage(
+        photoPaths[1],
+        document.getElementById('galleryPhoto1'),
+        'A memory of Elder Nma Onwuka'
+    );
+
+    tryImage(
+        photoPaths[2],
+        document.getElementById('galleryPhoto2'),
+        'Family memory'
+    );
+
+    tryImage(
+        photoPaths[3],
+        document.getElementById('galleryPhoto3'),
+        'Another family memory of Elder Nma Onwuka'
+    );
+
     // const v=document.createElement('video');v.controls=true;v.preload='metadata';v.src='/assets/videos/memorial.mp4';v.onloadedmetadata=()=>{const c=document.getElementById('galleryVideo');c.innerHTML='';c.appendChild(v)};v.onerror=()=>{};
 
 
