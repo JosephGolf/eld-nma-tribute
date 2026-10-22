@@ -181,6 +181,113 @@
             color: var(--ink);
         }
 
+        /* Tributes Section Layout & Form Card Styles */
+        .tributes-layout {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 55px;
+            align-items: start;
+        }
+        .tribute-intro {
+            position: sticky;
+            top: 25px;
+        }
+        .tribute-intro h2 {
+            margin-top: 12px;
+        }
+        .tribute-intro p {
+            color: var(--muted);
+        }
+        .tribute-count {
+            display: inline-block;
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 5px;
+            margin-top: 10px;
+            font-size: 0.88rem;
+            color: var(--green);
+        }
+        .form-card {
+            background: #fff;
+            padding: clamp(22px, 4vw, 42px);
+            box-shadow: 0 12px 40px rgba(33, 56, 42, 0.05);
+            border: 1px solid #eee8dd;
+            border-radius: 4px;
+        }
+        .form-card h3 {
+            font: 500 1.7rem 'Playfair Display', serif;
+            margin: 0 0 5px;
+        }
+        .form-card > p {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .field {
+            margin-bottom: 18px;
+        }
+        .field label {
+            display: block;
+            font-size: 0.83rem;
+            font-weight: 700;
+            margin-bottom: 7px;
+        }
+        .field input,
+        .field textarea,
+        .field select {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #dcded7;
+            border-radius: 3px;
+            background: #fdfcf9;
+            font: inherit;
+            color: var(--ink);
+            outline: none;
+            box-sizing: border-box;
+        }
+        .field input:focus,
+        .field textarea:focus,
+        .field select:focus {
+            border-color: var(--green2);
+            box-shadow: 0 0 0 3px rgba(40, 84, 70, 0.07);
+        }
+        .field textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        .field small {
+            display: block;
+            color: var(--muted);
+            font-size: 0.75rem;
+            margin-top: 5px;
+        }
+        .consent {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            font-size: 0.8rem;
+            color: var(--muted);
+            margin: 6px 0 20px;
+        }
+        .consent input {
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        .submit {
+            width: 100%;
+            padding: 16px;
+        }
+        .privacy {
+            font-size: 0.76rem;
+            color: var(--muted);
+            margin-top: 13px;
+        }
+
         /* Published Tributes & Read More Styles */
         .published-tributes{background:#fff}
         .published-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
