@@ -146,39 +146,6 @@ app.get('/api/health', async (_req, res) => {
 });
 app.get('*', (_req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')));
 
-
-/* Optional self-ping to help prevent inactivity while the server is running. */
-const SELF_PING_INTERVAL = 5 * 60 * 1000; // 5 minutes
-
-if (process.env.SELF_PING_ENABLED === 'true') {
-  const selfPingUrl = process.env.SELF_PING_URL;
-
-  if (selfPingUrl) {
-    const pingServer = async () => {
-      try {
-        const response = await fetch(selfPingUrl, {
-          signal: AbortSignal.timeout(15000)
-        });
-
-        console.log(
-            `[Self-ping] ${new Date().toISOString()} - HTTP ${response.status}`
-        );
-      } catch (error) {
-        console.error('[Self-ping] Failed:', error.message);
-      }
-    };
-
-    // Start after the server has had time to initialize.
-    setTimeout(pingServer, 30 * 1000);
-
-    // Repeat every five minutes.
-    setInterval(pingServer, SELF_PING_INTERVAL);
-  } else {
-    console.warn('[Self-ping] SELF_PING_URL is not configured.');
-  }
-}
-
-
 async function start() {
   if (!MONGODB_URI) throw new Error('MONGODB_URI is required. Configure it in your local .env or Render environment variables.');
   const client = new MongoClient(MONGODB_URI, { serverSelectionTimeoutMS: 10000 });
