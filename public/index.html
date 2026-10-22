@@ -8,7 +8,7 @@
     <style>
         :root{--green:#173b30;--green2:#285446;--gold:#c8a66a;--cream:#f8f5ef;--ink:#17251f;--muted:#69756e;--white:#fff;--line:#e8e2d7}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;line-height:1.65}a{color:inherit}.wrap{width:min(1120px,92%);margin:auto}.topbar{background:var(--green);color:#f8f5ef;padding:13px 0;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase}.topbar .wrap{display:flex;justify-content:space-between;gap:15px}.nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}.brand{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;line-height:1.2}.brand span{display:block;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:.68rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;margin-top:5px}.navlinks{display:flex;gap:25px;font-size:.9rem}.navlinks a{text-decoration:none}.hero{background:var(--green);color:white;position:relative;overflow:hidden}.hero:after{content:'78';position:absolute;font-family:'Playfair Display',serif;font-size:clamp(15rem,38vw,32rem);line-height:1;right:-2%;bottom:-17%;color:#fff;opacity:.035;pointer-events:none}.hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;min-height:550px;padding:64px 0 76px}.eyebrow{color:var(--gold);font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase}.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.7rem,5.6vw,5.3rem);line-height:1.05;font-weight:500;margin:18px 0}.hero h1 em{color:#d7bd8d;font-style:normal}.hero p{color:#d5e0da;max-width:510px;font-size:1.05rem}.dates{display:flex;align-items:center;gap:15px;margin:28px 0;color:#e4e9e5;font-size:.95rem}.dates .line{width:48px;height:1px;background:var(--gold)}.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--gold);color:#17251f;text-decoration:none;border:0;border-radius:3px;padding:14px 21px;font:700 .9rem 'DM Sans',sans-serif;cursor:pointer;transition:.2s}.btn:hover{filter:brightness(1.06);transform:translateY(-1px)}.btn-outline{background:transparent;border:1px solid #ffffff75;color:#fff;margin-left:10px}.portrait-frame{height:420px;max-width:390px;width:100%;margin:auto;position:relative;padding:12px;border:1px solid #c8a66a88}.portrait{height:100%;width:100%;background:linear-gradient(145deg,#a8b5a9,#526b5c);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}.portrait img{height:100%;width:100%;object-fit:cover}.portrait .placeholder{padding:35px;text-align:center;color:white}.portrait .placeholder strong{display:block;font:500 1.7rem 'Playfair Display',serif}.portrait .placeholder small{display:block;margin-top:12px;color:#edf1ed}.frame-caption{position:absolute;bottom:-20px;right:-18px;background:var(--gold);color:var(--green);padding:15px 20px;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700}.section{padding:90px 0}.section-head{text-align:center;max-width:650px;margin:0 auto 45px}.section-head .eyebrow{color:#9c7b41}.section h2{font:500 clamp(2rem,4vw,3.3rem)/1.15 'Playfair Display',serif;margin:10px 0 15px}.section-head p,.muted{color:var(--muted)}.story-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}.quote-mark{font:6rem/.7 'Playfair Display',serif;color:var(--gold)}.story-quote{font:500 1.65rem/1.45 'Playfair Display',serif;color:var(--green);margin:20px 0}.story-copy p{margin-top:0;color:#536158}.stat-row{display:flex;gap:40px;margin-top:30px;padding-top:25px;border-top:1px solid var(--line)}.stat strong{display:block;font:2.1rem 'Playfair Display',serif;color:var(--green)}.stat span{font-size:.8rem;color:var(--muted)}.gallery{background:#efeae0}
 
-        /* Updated Gallery Styles */
+        /* Gallery Styles */
         .gallery-container {
             position: relative;
             display: flex;
@@ -181,7 +181,49 @@
             color: var(--ink);
         }
 
-        .gallery-note{text-align:center;color:var(--muted);font-size:.83rem;margin-top:28px}.tributes-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:55px;align-items:start}.tribute-intro{position:sticky;top:25px}.tribute-intro h2{margin-top:12px}.tribute-intro p{color:var(--muted)}.tribute-count{display:inline-block;border-bottom:1px solid var(--gold);padding-bottom:5px;margin-top:10px;font-size:.88rem;color:var(--green)}.form-card{background:#fff;padding:clamp(22px,4vw,42px);box-shadow:0 12px 40px #21382a0c;border:1px solid #eee8dd}.form-card h3{font:500 1.7rem 'Playfair Display',serif;margin:0 0 5px}.form-card>p{color:var(--muted);font-size:.9rem;margin-top:0;margin-bottom:25px}.field{margin-bottom:18px}.field label{display:block;font-size:.83rem;font-weight:700;margin-bottom:7px}.field input,.field textarea,.field select{width:100%;padding:13px 14px;border:1px solid #dcded7;border-radius:3px;background:#fdfcf9;font:inherit;color:var(--ink);outline:none}.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--green2);box-shadow:0 0 0 3px #28544612}.field textarea{min-height:150px;resize:vertical}.field small{display:block;color:var(--muted);font-size:.75rem;margin-top:5px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.consent{display:flex;gap:10px;align-items:flex-start;font-size:.8rem;color:var(--muted);margin:6px 0 20px}.consent input{margin-top:5px}.submit{width:100%;padding:16px}.form-status{display:none;margin-top:15px;padding:12px 14px;font-size:.88rem;border-radius:3px}.form-status.show{display:block}.form-status.ok{background:#e8f4ec;color:#245d38}.form-status.error{background:#fff0ec;color:#9b3322}.privacy{font-size:.76rem;color:var(--muted);margin-top:13px}.published-tributes{background:#fff}.published-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.published-card{padding:24px;background:#f8f5ef;border:1px solid var(--line);overflow-wrap:anywhere}.published-card h3{font:500 1.35rem 'Playfair Display',serif;color:var(--green);margin:0 0 8px}.published-card p{white-space:pre-wrap}.published-meta{font-size:.8rem;color:var(--muted)}.empty-tributes{color:var(--muted);text-align:center;padding:22px;border:1px dashed #d5cbb9}@media(max-width:760px){.published-list{grid-template-columns:1fr}}.closing{background:var(--green);color:white;text-align:center;padding:75px 0}.closing .quote-mark{color:var(--gold);font-size:4rem}.closing h2{font:500 clamp(2rem,4vw,3.3rem)/1.2 'Playfair Display',serif;max-width:750px;margin:18px auto}.closing p{color:#d5e0da}.footer{padding:25px 0;background:#102b22;color:#c5d1c9;font-size:.8rem}.footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer a{color:#e1c58f}.hidden{display:none!important}@media(max-width:760px){.navlinks{gap:12px;font-size:.8rem}.hero-inner{grid-template-columns:1fr;gap:35px;padding:55px 0 70px}.hero-copy{text-align:center}.hero-copy p{margin-inline:auto}.dates{justify-content:center}.portrait-frame{height:330px;max-width:320px}.section{padding:65px 0}.story-grid,.tributes-layout{grid-template-columns:1fr;gap:35px}.tribute-intro{position:static}.form-row{grid-template-columns:1fr}.topbar .wrap{justify-content:center;text-align:center}.topbar .wrap span:last-child{display:none}}@media(max-width:420px){.navlinks a:nth-child(2){display:none}.btn-outline{margin:10px 0 0}.hero-copy .btn{width:100%;max-width:250px}.hero-copy .btn-outline{display:none}}
+        /* Published Tributes & Read More Styles */
+        .published-tributes{background:#fff}
+        .published-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+        .published-card{padding:24px;background:#f8f5ef;border:1px solid var(--line);overflow-wrap:anywhere;display:flex;flex-direction:column;justify-content:space-between}
+        .published-card h3{font:500 1.35rem 'Playfair Display',serif;color:var(--green);margin:0 0 8px}
+        .published-card p{white-space:pre-wrap;margin:0 0 12px}
+        .published-meta{font-size:.8rem;color:var(--muted);margin-top:12px}
+
+        /* Read More clamping */
+        .tribute-msg {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .tribute-msg.expanded {
+            display: block;
+        }
+        .read-more-btn {
+            background: none;
+            border: none;
+            color: var(--green2);
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            padding: 0;
+            margin-top: 4px;
+            align-self: flex-start;
+        }
+        .read-more-btn:hover {
+            text-decoration: underline;
+        }
+
+        .empty-tributes{color:var(--muted);text-align:center;padding:22px;border:1px dashed #d5cbb9}
+        @media(max-width:760px){.published-list{grid-template-columns:1fr}}
+
+        .closing{background:var(--green);color:white;text-align:center;padding:75px 0}.closing .quote-mark{color:var(--gold);font-size:4rem}.closing h2{font:500 clamp(2rem,4vw,3.3rem)/1.2 'Playfair Display',serif;max-width:750px;margin:18px auto}.closing p{color:#d5e0da}
+        .footer{padding:25px 0;background:#102b22;color:#c5d1c9;font-size:.8rem}.footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer a{color:#e1c58f}
+        .hidden{display:none!important}
+        @media(max-width:760px){.navlinks{gap:12px;font-size:.8rem}.hero-inner{grid-template-columns:1fr;gap:35px;padding:55px 0 70px}.hero-copy{text-align:center}.hero-copy p{margin-inline:auto}.dates{justify-content:center}.portrait-frame{height:330px;max-width:320px}.section{padding:65px 0}.story-grid,.tributes-layout{grid-template-columns:1fr;gap:35px}.tribute-intro{position:static}.form-row{grid-template-columns:1fr}.topbar .wrap{justify-content:center;text-align:center}.topbar .wrap span:last-child{display:none}}
+        @media(max-width:420px){.navlinks a:nth-child(2){display:none}.btn-outline{margin:10px 0 0}.hero-copy .btn{width:100%;max-width:250px}.hero-copy .btn-outline{display:none}}
+
         .tribute-pagination { display:flex; align-items:center; justify-content:center; gap:16px; flex-wrap:wrap; margin-top:28px; }
         .tribute-pagination .page-btn { border:1px solid #173b30; border-radius:3px; padding:11px 16px; background:#173b30; color:#fff; font:inherit; cursor:pointer; }
         .tribute-pagination .page-btn:disabled { opacity:.45; cursor:not-allowed; }
@@ -196,6 +238,30 @@
             min-height: 280px;
             object-fit: contain;
             background: #17251f;
+        }
+
+        /* Floating Audio Button */
+        .audio-toggle-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: var(--green);
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            padding: 10px 16px;
+            border-radius: 30px;
+            font: 600 0.85rem 'DM Sans', sans-serif;
+            cursor: pointer;
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        .audio-toggle-btn:hover {
+            background: var(--green2);
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -213,7 +279,9 @@
             Pledge Support&nbsp; ♥
         </a>
     </div><div class="portrait-frame"><div class="portrait" id="heroPortrait"><div class="placeholder"><strong>Your loved one's portrait</strong><small>Add his photo to<br>public/assets/photos/elder-nma-onwuka.jpg</small></div></div><div class="frame-caption">Loved • Honoured • Remembered</div></div></div></section>
+
     <section class="section" id="his-life"><div class="wrap story-grid"><div><div class="eyebrow">His story, our memories</div><div class="quote-mark">“</div><p class="story-quote">A life is measured not only by the years we live, but by the love, values and memories we leave behind.</p></div><div class="story-copy"><h2>A life worth celebrating.</h2><p>At 78, Elder Nma Onwuka leaves behind a story carried forward by family, friends and all whose lives he touched. This space is dedicated to remembering him with gratitude, sharing treasured moments, and celebrating the values that made his life meaningful.</p><p>Every photograph holds a memory. Every story brings us closer. Every tribute is a reminder that the people we love remain part of us.</p><p>Family and friends are invited to share a message, a special memory, or words of comfort. Together, let us honour his journey and keep his legacy alive for generations to come.</p><div class="stat-row"><div class="stat"><strong>78</strong><span>Years of life</span></div><div class="stat"><strong>∞</strong><span>Memories cherished</span></div><div class="stat"><strong>♥</strong><span>Love remembered</span></div></div></div></div></section>
+
     <section class="section gallery" id="gallery">
         <div class="wrap">
             <div class="section-head">
@@ -301,31 +369,48 @@
     <div class="media-modal" id="mediaModal" aria-hidden="true">
         <div class="modal-content-wrap" id="modalContentContainer">
             <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">&times;</button>
-            <!-- Dynamic content inserted via JS -->
         </div>
     </div>
 
     <section class="section" id="tributes"><div class="wrap tributes-layout"><div class="tribute-intro"><div class="eyebrow">Share a memory</div><h2>Your words will keep his memory alive.</h2><p>If Elder Nma Onwuka touched your life, we invite you to share a tribute. Your message will be sent privately to the family for review. It will appear on this website only if the family approves it through the secure link in the email notification.</p><div class="tribute-count">Every memory matters. Every voice is welcome.</div></div><div class="form-card"><h3>Write a tribute</h3><p>Share a message in honour of Elder Nma Onwuka.</p><form id="tributeForm"><div class="form-row"><div class="field"><label for="name">Your full name *</label><input id="name" name="name" autocomplete="name" maxlength="100" required placeholder="Enter your name"></div><div class="field"><label for="relationship">Your relationship</label><select id="relationship" name="relationship"><option value="Family member">Family member</option><option value="Friend">Friend</option><option value="Colleague">Colleague</option><option value="Church / community">Church / community</option><option value="Other">Other</option></select></div></div><div class="field"><label for="email">Email address (optional)</label><input id="email" name="email" type="email" maxlength="254" placeholder="you@example.com"><small>Only included so the family can identify your message if needed.</small></div><div class="field"><label for="title">Tribute title (optional)</label><input id="title" name="title" maxlength="120" placeholder="e.g. A father figure and mentor"></div><div class="field"><label for="message">Your tribute *</label><textarea id="message" name="message" minlength="10" maxlength="5000" required placeholder="Share a memory, a lesson he taught you, or a few words from the heart..."></textarea><small>10–5,000 characters.</small></div><div class="consent"><input id="consent" type="checkbox" required><label for="consent">I understand my tribute will be sent privately to the family for review and may be published on this memorial website if approved.</label></div><div class="hidden" aria-hidden="true"><label for="website">Leave this field empty</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div><button class="btn submit" id="submitBtn" type="submit">Send your tribute&nbsp; ↗</button><div id="formStatus" class="form-status" role="status" aria-live="polite"></div><div class="privacy">Tributes remain private unless the family approves them through the secure review link sent by email.</div></form></div></div></section>
-    <section class="section published-tributes" id="published-tributes"><div class="wrap"><div class="section-head"><div class="eyebrow">Words from family & friends</div><h2>Tributes & Memories</h2><p>Messages shared in love and published with the family’s approval.</p></div>
 
-        <div id="publishedTributes" class="published-list">
-            <div class="empty-tributes">Loading approved tributes…</div>
+    <section class="section published-tributes" id="published-tributes">
+        <div class="wrap">
+            <div class="section-head">
+                <div class="eyebrow">Words from family & friends</div>
+                <h2>Tributes & Memories</h2>
+                <p>Messages shared in love and published with the family’s approval.</p>
+            </div>
+
+            <div id="publishedTributes" class="published-list">
+                <div class="empty-tributes">Loading approved tributes…</div>
+            </div>
+
+            <nav id="tributePagination" class="tribute-pagination" aria-label="Tribute pages" hidden>
+                <button type="button" id="prevTributes" class="page-btn" disabled>
+                    ← Previous
+                </button>
+                <span id="tributePageInfo" aria-live="polite"></span>
+                <button type="button" id="nextTributes" class="page-btn" disabled>
+                    Next →
+                </button>
+            </nav>
         </div>
-
-        <nav id="tributePagination" class="tribute-pagination"
-             aria-label="Tribute pages" hidden>
-            <button type="button" id="prevTributes" class="page-btn" disabled>
-                ← Previous
-            </button>
-            <span id="tributePageInfo" aria-live="polite"></span>
-            <button type="button" id="nextTributes" class="page-btn" disabled>
-                Next →
-            </button>
-        </nav>
-    </div>
     </section>
+
     <section class="closing"><div class="wrap"><div class="quote-mark">“</div><h2>Though he is no longer with us, the love he gave and the lives he touched will never be forgotten.</h2><p>Rest well, Elder Nma Onwuka. Your memory lives on.</p></div></section>
-</main><footer class="footer"><div class="wrap"><span>In loving memory of Elder Nma Onwuka • 78 years</span><span>Made with care for family and friends</span></div></footer>
+</main>
+
+<footer class="footer"><div class="wrap"><span>In loving memory of Elder Nma Onwuka • 78 years</span><span>Made with care for family and friends</span></div></footer>
+
+<!-- Memorial Audio Player & Toggle Button -->
+<audio id="memorialAudio" loop preload="auto">
+    <source src="/assets/audio/memorial-bg.mp3" type="audio/mpeg">
+</audio>
+<button id="audioToggleBtn" class="audio-toggle-btn" aria-label="Toggle background music" title="Play/Pause background music">
+    🎵 <span id="audioLabel">Play Music</span>
+</button>
+
 <script>
     (function() {
         const photoPaths = [
@@ -408,7 +493,6 @@
 
         document.querySelectorAll('.gallery-card').forEach(card => {
             card.addEventListener('click', (e) => {
-                // Prevent opening modal if clicking directly on video controls
                 if (e.target.tagName === 'VIDEO' || e.target.tagName === 'SOURCE') {
                     return;
                 }
@@ -416,7 +500,6 @@
                 const mediaEl = card.querySelector('img, video');
                 if (!mediaEl) return;
 
-                // Clear previous modal media except close button
                 const existingMedia = modalContainer.querySelector('img, video');
                 if (existingMedia) existingMedia.remove();
 
@@ -436,7 +519,7 @@
                 if (clone) {
                     modalContainer.appendChild(clone);
                     modal.classList.add('active');
-                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                    document.body.style.overflow = 'hidden';
                 }
             });
         });
@@ -458,33 +541,63 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeModal();
         });
+
+        // Background Memorial Audio Logic
+        const audioEl = document.getElementById('memorialAudio');
+        const audioBtn = document.getElementById('audioToggleBtn');
+        const audioLabel = document.getElementById('audioLabel');
+        let isPlaying = false;
+
+        if (audioBtn && audioEl) {
+            audioBtn.addEventListener('click', () => {
+                if (isPlaying) {
+                    audioEl.pause();
+                    audioLabel.textContent = 'Play Music';
+                    audioBtn.style.opacity = '0.85';
+                    isPlaying = false;
+                } else {
+                    audioEl.play().then(() => {
+                        audioLabel.textContent = 'Pause Music';
+                        audioBtn.style.opacity = '1';
+                        isPlaying = true;
+                    }).catch(err => {
+                        console.log("Audio playback prevented or missing audio file:", err);
+                    });
+                }
+            });
+        }
     })();
 
-    const form=document.getElementById('tributeForm'),statusBox=document.getElementById('formStatus'),submitBtn=document.getElementById('submitBtn');
-    form.addEventListener('submit',async e=>{
+    // Tribute Form Handling
+    const form = document.getElementById('tributeForm'),
+        statusBox = document.getElementById('formStatus'),
+        submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', async e => {
         e.preventDefault();
-        statusBox.className='form-status';
-        statusBox.textContent='';
-        if(!form.reportValidity())return;
-        submitBtn.disabled=true;
-        submitBtn.textContent='Sending tribute…';
-        try{
-            const data=Object.fromEntries(new FormData(form).entries());
-            const res=await fetch('/api/tributes',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
-            const result=await res.json().catch(()=>({}));
-            if(!res.ok)throw new Error(result.message||'Your tribute could not be sent. Please try again.');
-            statusBox.className='form-status show ok';
-            statusBox.textContent='Thank you. Your tribute has been sent privately to the family for review. It will appear here only if approved.';
+        statusBox.className = 'form-status';
+        statusBox.textContent = '';
+        if(!form.reportValidity()) return;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending tribute…';
+        try {
+            const data = Object.fromEntries(new FormData(form).entries());
+            const res = await fetch('/api/tributes', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)});
+            const result = await res.json().catch(() => ({}));
+            if(!res.ok) throw new Error(result.message || 'Your tribute could not be sent. Please try again.');
+            statusBox.className = 'form-status show ok';
+            statusBox.textContent = 'Thank you. Your tribute has been sent privately to the family for review. It will appear here only if approved.';
             form.reset();
-        }catch(err){
-            statusBox.className='form-status show error';
-            statusBox.textContent=err.message||'Unable to send right now. Please check your connection and try again.';
-        }finally{
-            submitBtn.disabled=false;
-            submitBtn.innerHTML='Send your tribute&nbsp; ↗';
+        } catch(err) {
+            statusBox.className = 'form-status show error';
+            statusBox.textContent = err.message || 'Unable to send right now. Please check your connection and try again.';
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'Send your tribute&nbsp; ↗';
         }
     });
 
+    // Tributes Pagination & "Read More" Functionality
     let currentTributePage = 1;
     const tributePageSize = 6;
 
@@ -512,17 +625,37 @@
                 for (const tribute of tributes) {
                     const card = document.createElement('article');
                     card.className = 'published-card';
+
                     const heading = document.createElement('h3');
                     heading.textContent = tribute.title || 'A tribute to Elder Nma Onwuka';
+
+                    const message = document.createElement('p');
+                    message.className = 'tribute-msg';
+                    message.textContent = tribute.message || '';
+
+                    card.append(heading, message);
+
+                    // Add "Read more" button if the message text is long
+                    if ((tribute.message || '').length > 180) {
+                        const readMoreBtn = document.createElement('button');
+                        readMoreBtn.className = 'read-more-btn';
+                        readMoreBtn.textContent = 'Read more...';
+
+                        readMoreBtn.addEventListener('click', () => {
+                            message.classList.toggle('expanded');
+                            readMoreBtn.textContent = message.classList.contains('expanded') ? 'Read less' : 'Read more...';
+                        });
+                        card.appendChild(readMoreBtn);
+                    }
+
                     const meta = document.createElement('div');
                     meta.className = 'published-meta';
                     const date = tribute.submittedAt
                         ? new Date(tribute.submittedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })
                         : '';
                     meta.textContent = `${tribute.name} · ${tribute.relationship || 'Family and friends'}${date ? ' · ' + date : ''}`;
-                    const message = document.createElement('p');
-                    message.textContent = tribute.message || '';
-                    card.append(heading, meta, message);
+                    card.appendChild(meta);
+
                     target.appendChild(card);
                 }
             }
@@ -543,12 +676,19 @@
     }
 
     document.getElementById('prevTributes')?.addEventListener('click', () => {
-        if (currentTributePage > 1) loadPublishedTributes(currentTributePage - 1);
+        if (currentTributePage > 1) {
+            loadPublishedTributes(currentTributePage - 1);
+        }
     });
-    document.getElementById('nextTributes')?.addEventListener('click', () => loadPublishedTributes(currentTributePage + 1));
+
+    document.getElementById('nextTributes')?.addEventListener('click', () => {
+        loadPublishedTributes(currentTributePage + 1);
+    });
+
     loadPublishedTributes();
 </script>
-</body></html>
+</body>
+</html>
 
 <!--<!doctype html>-->
 <!--<html lang="en">-->
